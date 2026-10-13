@@ -12,11 +12,11 @@ Answer each question in 3 to 5 sentences. Be specific and honest about what actu
 
 Document at least 3 bugs you found. Add rows as needed.
 
-| Input | Expected Behavior | Actual Behavior | Console Output / Error |
-|-------|-------------------|-----------------|------------------------|
-|Guessed 60 when secret was 51|Told me to guess lower|Said "Go HIGHER!"|Wrong hint displayed|
-|Started game without guessing|Attempts should start at 0|Attempts started at 1|No error shown|
-|Won, clicked New Game, then guessed new secret|Game should accept new guesses|Nothing happened until I refreshed|No visible response|
+| Input | Expected Behavior | Actual Behavior | Console Output / Error | Suspected Code Location |
+|-------|-------------------|-----------------|------------------------|-------------------------|
+|Guessed 60 when secret was 51|Told me to guess lower|Said "Go HIGHER!"|Wrong hint displayed|app.py - check_guess()|
+|Started game without guessing|Attempts should start at 0|Attempts started at 1|No error shown|app.py - session-state initialization|
+|Won, clicked New Game, then guessed new secret|Game should accept new guesses|Nothing happened until I refreshed|No visible response|app.py - New Game/reset logic
 
 ---
 
