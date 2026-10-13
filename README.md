@@ -26,28 +26,33 @@ It wrote the code, ran away, and now the game is unplayable.
 ## 📝 Document Your Experience
 
 - [ ] Describe the game's purpose.
+The purpose of this game is to guess a secret number within a limited number of attempts. The game gives hints to help players figure out whether their guesses are too high or too low. Players can also earn points based on their guesses.
 - [ ] Detail which bugs you found.
+When I first ran the game, I noticed that the hints were backwards. For example, when the secret number was 51 and I guessed 60, the game told me to go higher instead of lower. I also noticed that the attempt counter started at 1 even though I hadn't guessed anything yet. Another bug happened after winning because clicking New Game changed the secret number, but I couldn't play again until I refreshed the page.
 - [ ] Explain what fixes you applied.
+I used ChatGPT to help me understand the problems and figure out how to fix them. I corrected the hint messages, changed the attempt counter to start at 0, and updated the New Game button to reset the game status. I also moved the guessing functions into logic_utils.py to make the code easier to understand and test. After making these changes, I ran three pytest tests, and all three passed.
 
 ## 📸 Demo Walkthrough
 
 Describe your fixed game in numbered steps so a reader can follow along without watching a video:
 
-1. <!-- Describe this step -->
-2. <!-- Describe this step -->
-3. <!-- Describe this step -->
-4. <!-- Describe this step -->
-5. <!-- Add more steps as needed -->
+1. The player starts a new game on Normal difficulty with 8 attempts available.
+2. The player enters 40, and the game says "Go HIGHER!" because the guess is too low.
+3. The player enters 70, and the game says "Go LOWER!" because the guess is too high.
+4. The player's score decreases by 5 points for each incorrect guess.
+5. The player enters 50, and the game displays "Correct!" and announces the win.
+6. The player clicks New Game, and the game resets so another round can begin.
 
 **Screenshot** *(optional)*: <!-- Insert a screenshot of your fixed, winning game here -->
 
 ## 🧪 Test Results
 
-```
-# Paste your pytest output here, e.g.:
-# pytest tests/
-# ========================= X passed in 0.XXs =========================
-```
+
+I used pytest to check that the game recognizes correct guesses and gives the proper hints for guesses that are too high or too low.
+tests/test_game_logic.py::test_winning_guess PASSED                  [ 33%]
+tests/test_game_logic.py::test_guess_too_high PASSED                 [ 66%]
+tests/test_game_logic.py::test_guess_too_low PASSED                  [100%]
+
 
 ## 🚀 Stretch Features
 
