@@ -49,6 +49,7 @@ Describe your fixed game in numbered steps so a reader can follow along without 
 
 
 I used pytest to check that the game recognizes correct guesses and gives the proper hints for guesses that are too high or too low.
+
 tests/test_game_logic.py::test_winning_guess PASSED                  [ 33%]
 tests/test_game_logic.py::test_guess_too_high PASSED                 [ 66%]
 tests/test_game_logic.py::test_guess_too_low PASSED                  [100%]
