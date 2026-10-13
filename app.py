@@ -39,6 +39,9 @@ if "secret" not in st.session_state:
 if "attempts" not in st.session_state:
     st.session_state.attempts = 0
 
+if "guess_key" not in st.session_state:
+    st.session_state.guess_key = 0
+
 if "score" not in st.session_state:
     st.session_state.score = 0
 
@@ -64,7 +67,7 @@ with st.expander("Developer Debug Info"):
 
 raw_guess = st.text_input(
     "Enter your guess:",
-    key=f"guess_input_{difficulty}"
+    key=f"guess_input_{difficulty}_{st.session_state.guess_key}"
 )
 
 col1, col2, col3 = st.columns(3)
