@@ -107,7 +107,7 @@ if submit:
         else:
             secret = st.session_state.secret
 
-        outcome, message = = check_guess(
+        outcome, message = check_guess(
     guess_int,
     st.session_state.secret
 )
