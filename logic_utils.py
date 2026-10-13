@@ -7,8 +7,9 @@ def get_range_for_difficulty(difficulty: str):
         return 1, 200
     return 1, 100
 
+
 def parse_guess(raw: str):
-   if raw is None or raw.strip() == "":
+    if raw is None or raw.strip() == "":
         return False, None, "Enter a guess."
 
     try:
@@ -37,4 +38,3 @@ def update_score(current_score: int, outcome: str, attempt_number: int):
         return current_score - 5
 
     return current_score
-
